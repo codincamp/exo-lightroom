@@ -1,0 +1,27 @@
+{% extends "light/base.html" %}
+
+{% block title %}STD{% endblock title %}
+
+{% block content %}
+{% for light,form in object_list.items %}
+<div class="col-md-2">
+    <div class="row">
+        <div class="col-md-12">
+            {% if light.state == 1 %}
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color:#{{light.color}}"></i>
+            {% else %}
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="color:black"></i>
+            {% endif %}
+        </div>
+        <div class="col-md-12">
+            <form  class="form-inline" action="{% url 'light-update' light.id %}"  method="post">
+                {%csrf_token%}
+                {{form.color}}
+                {{form.state}}
+                <input type="submit" value="OK">
+            </form>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

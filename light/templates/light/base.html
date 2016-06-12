@@ -1,0 +1,35 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.css' %}" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.css' %}" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}" media="screen" title="no title" charset="utf-8">
+        <title>LightRoom | {% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="lightroom" class="row">
+                <div class="col-md-12">
+                    <form class="form-inline"  action="{% url 'light-create' %}"  method="post">
+                        {%csrf_token%}
+                        <div class="form-group">
+                        {{ lightform.color }}
+                        </div>
+                        <div class="form-group">
+                        {{ lightform.state }}
+                        </div>
+                        <input type="submit" value="Créer">
+                    </form>
+                </div>
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}" charset="utf-8"></script>
+        {% block custom_script %}
+        {% endblock custom_script %}
+    </body>
+</html>

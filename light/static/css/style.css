@@ -1,0 +1,17 @@
+.index h1, .index h2 {
+    text-align: center;
+    font-size: 6em;
+    font-family: 'Ubuntu';
+    margin-bottom: 1em;
+}
+
+.index a.btn {
+    padding: .5em;
+    font-size: 10em;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.fa.fa-lightbulb-o {
+    font-size:10em;
+}

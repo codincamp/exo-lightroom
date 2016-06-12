@@ -1,0 +1,12 @@
+{% extends "light/base.html" %}
+{% load staticfiles%}
+
+{% block title %}REST{% endblock title %}
+
+{% block custom_script %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#lightroom").append("<h1>A vous de jouer</h1>");
+    });
+</script>
+{% endblock custom_script %}

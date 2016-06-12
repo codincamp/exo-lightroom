@@ -1,0 +1,5 @@
+Django==1.9.7
+django-extensions==1.6.7
+django-generic-json-views==0.7
+pkg-resources==0.0.0
+six==1.10.0
